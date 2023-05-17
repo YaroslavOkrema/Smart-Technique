@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+Georgian:wght@300&display=swap" 
+        rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/favicon/st.png">
+    <script src="https://kit.fontawesome.com/d7b0501d32.js" crossorigin="anonymous"></script>
+    <title>Smart Technique</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="header__logo" href="index.html">ST</a>
+                <nav class="nav">
+                    <a class="nav__link" href="keyboards.html">Keyboards</a>
+                    <a class="nav__link" href="monitors.html">Monitors</a>
+                    <a class="nav__link" href="pc.html">PC</a>
+                    <a class="nav__link" href="laptop.html">Laptop</a>
+                    <a class="nav__link" href="about.html">About</a>
+                </nav>
+            </div>
+        </div>
+     </header>
+     <section class="order">
+        <div class="container">
+            <form>
+                <label for="name">Ім'я:</label>
+                <input class="order__input" type="text" id="name" name="name" required>
+
+                <label for="surname">Прізвище:</label>
+                <input class="order__input" type="text" id="surname" name="surname" required>
+              
+                <label for="email">Email:</label>
+                <input class="order__input" type="email" id="email" name="email" required>
+                
+                <label for="address">Домашня адресса:</label>
+                <input class="order__input" type="text" id="address" name="address" required>
+
+                <label for="phone">Телефон:</label>
+                <input class="order__input" type="tel" id="phone" name="phone" required>
+                
+                
+                <label for="city">Місто:</label>
+                <input class="order__input" type="text" id="city" name="city" required>
+
+                <label for="country">Країна:</label>
+                <input class="order__input" type="text" id="country" name="country" required>
+                                            
+                <input class="order__btn" type="submit" value="Оформити замовлення" onclick="showAlert()">
+                <script>
+                    function showAlert() {
+                      alert("Ваше замовлення успішно оформлено. Наш оператор скоро з вами зв'яжеться!");
+                    }
+                </script>
+            </form>
+        </div>
+     </section>
+     <section class="map">
+        <div class="container">
+            <div class="map__content">
+                <h2 class="map__title">
+                    <div><i class="fas fa-map-marker-alt"></i></div>
+                    <a href="https://goo.gl/maps/cukGSbJcfXRvs7k86" target="_blank">Open Map</a>
+                </h2>
+            </div>
+        </div>
+     </section>
+     <footer id="contacts" class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__contenr">
+                    <div class="footer__title">For questions and suggestions</div>
+                    <div class="footer__info">email@smarttechnique.com</div>
+                    <div class="footer__info"> +13 674 567 75 54</div>
+                </div>
+                <div class="footer__contenr">
+                    <div class="footer__title">We are waiting for your visit</div>
+                    <div class="footer__info">1 Central Street, Boston (entrance from the store)</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
