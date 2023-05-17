@@ -65,18 +65,18 @@ const keyboards = [
     }
   ];
 
-  var originalKeyboards = keyboards.slice(); // Создаем копию исходного массива клавиатур
+  var originalKeyboards = keyboards.slice();
 
-function filterKeyboardsByBrand(brand) {
+function filterKeyboardsByBrand(brands) {
   var keyboardContainer = document.getElementById('keyboardContainer');
   keyboardContainer.innerHTML = '';
 
   var filteredKeyboards;
-  if (brand === '') {
-    filteredKeyboards = originalKeyboards.slice(); // Используем копию исходного массива
+  if (brands.length === 0) {
+    filteredKeyboards = originalKeyboards.slice();
   } else {
     filteredKeyboards = originalKeyboards.filter(function(keyboard) {
-      return keyboard.brand === brand;
+      return brands.includes(keyboard.brand);
     });
   }
 
@@ -85,68 +85,71 @@ function filterKeyboardsByBrand(brand) {
     keyboardContainer.appendChild(keyboardItem);
   }
 }
-  
-  function createKeyboardItem(keyboard) {
-    var item = document.createElement('div');
-    item.classList.add('product__item');
-  
-    var photo = document.createElement('img');
-    photo.classList.add('product__photo');
-    photo.src = keyboard.photo;
-    photo.alt = 'Keyboards';
-    item.appendChild(photo);
-  
-    var hoverPhoto = document.createElement('img');
-    hoverPhoto.classList.add('photo__hover');
-    hoverPhoto.src = keyboard.hoverPhoto;
-    hoverPhoto.alt = 'Keyboards';
-    item.appendChild(hoverPhoto);
-  
-    var title = document.createElement('div');
-    title.classList.add('product__title');
-    title.textContent = keyboard.title;
-    item.appendChild(title);
-  
-    var price = document.createElement('div');
-    price.classList.add('product__price');
-    price.textContent = keyboard.price;
-    item.appendChild(price);
-  
-    var subtitle = document.createElement('div');
-    subtitle.classList.add('product__subtitle');
-    subtitle.textContent = keyboard.subtitle;
-    item.appendChild(subtitle);
-  
-    var button = document.createElement('button');
-    button.classList.add('product__btn');
-    button.textContent = 'Купить';
-    item.appendChild(button);
-  
-    return item;
+
+function createKeyboardItem(keyboard) {
+  var item = document.createElement('div');
+  item.classList.add('product__item');
+
+  var photo = document.createElement('img');
+  photo.classList.add('product__photo');
+  photo.src = keyboard.photo;
+  photo.alt = 'Keyboards';
+  item.appendChild(photo);
+
+  var hoverPhoto = document.createElement('img');
+  hoverPhoto.classList.add('photo__hover');
+  hoverPhoto.src = keyboard.hoverPhoto;
+  hoverPhoto.alt = 'Keyboards';
+  item.appendChild(hoverPhoto);
+
+  var title = document.createElement('div');
+  title.classList.add('product__title');
+  title.textContent = keyboard.title;
+  item.appendChild(title);
+
+  var price = document.createElement('div');
+  price.classList.add('product__price');
+  price.textContent = keyboard.price;
+  item.appendChild(price);
+
+  var subtitle = document.createElement('div');
+  subtitle.classList.add('product__subtitle');
+  subtitle.textContent = keyboard.subtitle;
+  item.appendChild(subtitle);
+
+  var button = document.createElement('button');
+  button.classList.add('product__btn');
+  button.textContent = 'Купить';
+  item.appendChild(button);
+
+  return item;
 }
 
 function handleCheckboxChange() {
-    var checkboxes = document.getElementsByName('brandCheckbox');
-    var selectedBrand = '';
-  
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        selectedBrand = checkboxes[i].value;
-        break;
-      }
+  var checkboxes = document.getElementsByName('brandCheckbox');
+  var selectedBrands = [];
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+      selectedBrands.push(checkboxes[i].value);
     }
-  
-    filterKeyboardsByBrand(selectedBrand);
   }
-  
-  function handleResetFilter() {
-    var checkboxes = document.getElementsByName('brandCheckbox');
-  
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = false;
-    }
-  
+
+  if (selectedBrands.length === 0) {
     filterKeyboardsByBrand('');
+  } else {
+    filterKeyboardsByBrand(selectedBrands);
   }
+}
+
+function handleResetFilter() {
+  var checkboxes = document.getElementsByName('brandCheckbox');
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].checked = false;
+  }
+
+  filterKeyboardsByBrand('');
+}
 
   

@@ -160,7 +160,7 @@ hr{
 
 .product__subtitle {
     font-size: 10px;
-    color: green;
+    color: rgb(53, 136, 53);
     margin-left: 15px;
 }
 
@@ -171,6 +171,13 @@ hr{
     margin-top: 30px;
     margin-left: 80px;
     cursor: pointer;
+    transition: .3s;
+}
+
+.product__btn:hover {
+    background-color: rgb(35, 81, 180);
+    color: white;
+    border: rgb(35, 81, 180);
 }
 
 .photo__hover {
