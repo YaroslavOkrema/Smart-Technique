@@ -125,13 +125,26 @@
         <div class="contact__title"><h1>Leave your phone number for feedback</h1></div>
         <div class="contact__subtitle"><h4>We'll get back to you within 5 minutes</h4></div>
         <div class="contact__info">
-            <input class="contact__input" type="number" name="name" placeholder="Your phone number">
-            <button class="contact__btn" type="submit" onclick="showAlert()">add</button>
+            <form id="contactForm">
+                <input class="contact__input" type="number" name="phoneNumber" id="phoneInput" placeholder="Your phone number">
+                <button class="contact__btn" type="submit">add</button>
+            </form>
             <script>
+                document.getElementById("contactForm").addEventListener("submit", function(event) {
+                  event.preventDefault();
+                  
+                  var phoneInput = document.getElementById("phoneInput");
+                  if (phoneInput.value === "") {
+                    alert("Будь ласка, введіть ваш номер телефону!");
+                  } else {
+                    showAlert();
+                  }
+                });
+                
                 function showAlert() {
-                  alert("Ваш номер успішно надіслано! Ми зв'яжемося з вами протягом 5-ти хвилин");
+                  alert("Ваш номер успішно надіслано! Ми зв'яжемося з вами протягом 5 хвилин.");
                 }
-            </script>
+            </script>        
         </div>
     </div>
  </section>
