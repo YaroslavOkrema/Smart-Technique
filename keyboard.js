@@ -117,10 +117,12 @@ function createKeyboardItem(keyboard) {
   subtitle.textContent = keyboard.subtitle;
   item.appendChild(subtitle);
 
-  var button = document.createElement('button');
+  var button = document.createElement('a');
   button.classList.add('product__btn');
+  button.href = 'order.html'; 
   button.textContent = 'Купить';
   item.appendChild(button);
+
 
   return item;
 }
@@ -152,4 +154,18 @@ function handleResetFilter() {
   filterKeyboardsByBrand('');
 }
 
+/*NAV TOGGLE*/
+const burger = document.getElementById("burger")
+const menu = document.getElementById("menu")
+burger.onclick = function(event){
+    
+    if(burger.classList.contains('active')){
+        burger.classList.remove('active');
+        menu.style.display = 'none';
+    }
+    else{
+        burger.classList.add('active');
+        menu.style.display = 'block';
+    }
+}
   
