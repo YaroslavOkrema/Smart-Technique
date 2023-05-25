@@ -65,13 +65,13 @@ const monitors = [
     }
   ];
 
-  var originalMonitors = monitors.slice();
+  let originalMonitors = monitors.slice();
 
   function filterMonitorsByBrand(brands) {
-    var monitorContainer = document.getElementById('monitorContainer');
+    let monitorContainer = document.getElementById('monitorContainer');
     monitorContainer.innerHTML = '';
   
-    var filteredMonitors;
+    let filteredMonitors;
     if (brands.length === 0) {
       filteredMonitors = originalMonitors.slice();
     } else {
@@ -80,44 +80,44 @@ const monitors = [
       });
     }
   
-    for (var i = 0; i < filteredMonitors.length; i++) {
-      var monitorItem = createMonitorItem(filteredMonitors[i]);
+    for (let i = 0; i < filteredMonitors.length; i++) {
+      let monitorItem = createMonitorItem(filteredMonitors[i]);
       monitorContainer.appendChild(monitorItem);
     }
   }
 
 function createMonitorItem(monitor) {
-  var item = document.createElement('div');
+  let item = document.createElement('div');
   item.classList.add('product__item');
 
-  var photo = document.createElement('img');
+  let photo = document.createElement('img');
   photo.classList.add('product__photo');
   photo.src = monitor.photo;
   photo.alt = 'Monitors';
   item.appendChild(photo);
 
-  var hoverPhoto = document.createElement('img');
+  let hoverPhoto = document.createElement('img');
   hoverPhoto.classList.add('photo__hover');
   hoverPhoto.src = monitor.hoverPhoto;
   hoverPhoto.alt = 'Monitors';
   item.appendChild(hoverPhoto);
 
-  var title = document.createElement('div');
+  let title = document.createElement('div');
   title.classList.add('product__title');
   title.textContent = monitor.title;
   item.appendChild(title);
 
-  var price = document.createElement('div');
+  let price = document.createElement('div');
   price.classList.add('product__price');
   price.textContent = monitor.price;
   item.appendChild(price);
 
-  var subtitle = document.createElement('div');
+  let subtitle = document.createElement('div');
   subtitle.classList.add('product__subtitle');
   subtitle.textContent = monitor.subtitle;
   item.appendChild(subtitle);
 
-  var button = document.createElement('a');
+  let button = document.createElement('a');
   button.classList.add('product__btn');
   button.href = 'order.html'; 
   button.textContent = 'Купить';
@@ -127,10 +127,10 @@ function createMonitorItem(monitor) {
 }
 
 function handleCheckboxChange() {
-    var checkboxes = document.getElementsByName('brandCheckbox');
-    var selectedBrands = [];
+    let checkboxes = document.getElementsByName('brandCheckbox');
+    let selectedBrands = [];
   
-    for (var i = 0; i < checkboxes.length; i++) {
+    for (let i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         selectedBrands.push(checkboxes[i].value);
       }
@@ -141,13 +141,4 @@ function handleCheckboxChange() {
     } else {
       filterMonitorsByBrand(selectedBrands);
     }
-  }
-function handleResetFilter() {
-    var checkboxes = document.getElementsByName('brandCheckbox');
-
-  for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].checked = false;
-  }
-
-  filterMonitorsByBrand('');
 }
