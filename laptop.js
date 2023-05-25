@@ -4,7 +4,7 @@ const laptops = [
       hoverImg: "images/laptops/1.1.jpg",
       title: "Ноутбук Apple MacBook Air 13\" M1 256GB 2020",
       price: "39 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Apple"
     },
     {
@@ -12,7 +12,7 @@ const laptops = [
       hoverImg: "images/laptops/2.2.jpg",
       title: "Ноутбук ASUS TUF Gaming A15 Graphite Black",
       price: "35 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "ASUS"
     },
     {
@@ -20,7 +20,7 @@ const laptops = [
       hoverImg: "images/laptops/3.3.jpg",
       title: "Ноутбук Acer Nitro 5 Shale Black",
       price: "45 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Acer"
     },
     {
@@ -28,7 +28,7 @@ const laptops = [
       hoverImg: "images/laptops/4,4.jpg",
       title: "Ноутбук Apple MacBook Air 13.6\" M2 256GB 2022",
       price: "57 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Apple"
     },
     {
@@ -36,7 +36,7 @@ const laptops = [
       hoverImg: "images/laptops/5.5.jpg",
       title: "Ноутбук Acer Predator Helios 300 PH317-55-55X1",
       price: "67 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Acer"
     },
     {
@@ -44,7 +44,7 @@ const laptops = [
       hoverImg: "images/laptops/6.6.jpg",
       title: "Ноутбук ASUS ROG Zephyrus Duo GX650PZ",
       price: "178 500₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "ASUS"
     },
     {
@@ -52,7 +52,7 @@ const laptops = [
       hoverImg: "images/laptops/7.7.jpg",
       title: "Ноутбук Apple MacBook Pro 16\" Pro 512GB 2023",
       price: "124 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Apple"
     },
     {
@@ -60,7 +60,7 @@ const laptops = [
       hoverImg: "images/laptops/8.8.jpg",
       title: "Ноутбук MSI Raider GE78 HX 13V",
       price: "198 299₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "MSI"
     }
   ];
@@ -117,8 +117,9 @@ function createLaptopItem(laptop) {
     subtitle.textContent = laptop.subtitle;
     item.appendChild(subtitle);
   
-    var button = document.createElement('button');
+    var button = document.createElement('a');
     button.classList.add('product__btn');
+    button.href = 'order.html'; 
     button.textContent = 'Купить';
     item.appendChild(button);
   
