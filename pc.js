@@ -65,13 +65,13 @@ const computers = [
     }
   ];
 
-  var originalComputers = computers.slice();
+  let originalComputers = computers.slice();
 
   function filterComputersByBrand(brands) {
-    var computerContainer = document.getElementById('computerContainer');
+    let computerContainer = document.getElementById('computerContainer');
     computerContainer.innerHTML = '';
   
-    var filteredComputers;
+    let filteredComputers;
     if (brands.length === 0) {
       filteredComputers = originalComputers.slice();
     } else {
@@ -80,44 +80,44 @@ const computers = [
       });
     }
   
-    for (var i = 0; i < filteredComputers.length; i++) {
-      var computerItem = createComputerItem(filteredComputers[i]);
+    for (let i = 0; i < filteredComputers.length; i++) {
+      let computerItem = createComputerItem(filteredComputers[i]);
       computerContainer.appendChild(computerItem);
     }
   }
   
   function createComputerItem(computer) {
-    var item = document.createElement('div');
+    let item = document.createElement('div');
     item.classList.add('product__item');
   
-    var photo = document.createElement('img');
+    let photo = document.createElement('img');
     photo.classList.add('product__photo');
     photo.src = computer.image;
     photo.alt = 'Computers';
     item.appendChild(photo);
   
-    var hoverPhoto = document.createElement('img');
+    let hoverPhoto = document.createElement('img');
     hoverPhoto.classList.add('photo__hover');
     hoverPhoto.src = computer.hoverImage;
     hoverPhoto.alt = 'Computers';
     item.appendChild(hoverPhoto);
   
-    var title = document.createElement('div');
+    let title = document.createElement('div');
     title.classList.add('product__title');
     title.textContent = computer.title;
     item.appendChild(title);
   
-    var price = document.createElement('div');
+    let price = document.createElement('div');
     price.classList.add('product__price');
     price.textContent = computer.price;
     item.appendChild(price);
   
-    var subtitle = document.createElement('div');
+    let subtitle = document.createElement('div');
     subtitle.classList.add('product__subtitle');
     subtitle.textContent = computer.subtitle;
     item.appendChild(subtitle);
   
-    var button = document.createElement('a');
+    let button = document.createElement('a');
     button.classList.add('product__btn');
     button.href = 'order.html'; 
     button.textContent = 'Купить';
@@ -127,10 +127,10 @@ const computers = [
   }
   
   function handleCheckboxChange() {
-    var checkboxes = document.getElementsByName('brandCheckbox');
-    var selectedBrands = [];
+    let checkboxes = document.getElementsByName('brandCheckbox');
+    let selectedBrands = [];
   
-    for (var i = 0; i < checkboxes.length; i++) {
+    for (let i = 0; i < checkboxes.length; i++) {
       if (checkboxes[i].checked) {
         selectedBrands.push(checkboxes[i].value);
       }
@@ -143,13 +143,4 @@ const computers = [
     }
   }
   
-  function handleResetFilter() {
-    var checkboxes = document.getElementsByName('brandCheckbox');
-  
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = false;
-    }
-  
-    filterComputersByBrand([]);
-  }
   
