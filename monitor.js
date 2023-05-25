@@ -117,8 +117,9 @@ function createMonitorItem(monitor) {
   subtitle.textContent = monitor.subtitle;
   item.appendChild(subtitle);
 
-  var button = document.createElement('button');
+  var button = document.createElement('a');
   button.classList.add('product__btn');
+  button.href = 'order.html'; 
   button.textContent = 'Купить';
   item.appendChild(button);
 
