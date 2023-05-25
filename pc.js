@@ -4,7 +4,7 @@ const computers = [
       hoverImage: "images/pc/1.1.jpg",
       title: "Компьютер Artline Gaming (X43v31)",
       price: "27 500₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     },
     {
@@ -12,7 +12,7 @@ const computers = [
       hoverImage: "images/pc/2.2.jpg",
       title: "Компьютер COBRA Advanced",
       price: "29 200₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "COBRA"
     },
     {
@@ -20,7 +20,7 @@ const computers = [
       hoverImage: "images/pc/3.3.jpg",
       title: "Компьютер ARTLINE Gaming X77 v80",
       price: "81 200₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     },
     {
@@ -28,7 +28,7 @@ const computers = [
       hoverImage: "images/pc/4.4.jpg",
       title: "Компьютер ARTLINE Gaming SAMURAI",
       price: "122 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     },
     {
@@ -36,7 +36,7 @@ const computers = [
       hoverImage: "images/pc/5.5.jpg",
       title: "Компьютер ARTLINE Gaming TUF v62Win",
       price: "85 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     },
     {
@@ -44,7 +44,7 @@ const computers = [
       hoverImage: "images/pc/6.6.jpg",
       title: "Компьютер ARTLINE Overlord VALHALLA",
       price: "326 500₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     },
     {
@@ -52,7 +52,7 @@ const computers = [
       hoverImage: "images/pc/7.7.jpg",
       title: "Компьютер ARTLINE Overlord",
       price: "283 999₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     },
     {
@@ -60,7 +60,7 @@ const computers = [
       hoverImage: "images/pc/8.8.jpg",
       title: "Компьютер ARTLINE Overlord P99",
       price: "295 299₴",
-      availability: "Есть в наличии",
+      subtitle: "Есть в наличии",
       brand: "Artline"
     }
   ];
@@ -117,11 +117,12 @@ const computers = [
     subtitle.textContent = computer.subtitle;
     item.appendChild(subtitle);
   
-    var button = document.createElement('button');
+    var button = document.createElement('a');
     button.classList.add('product__btn');
-    button.textContent = 'Buy';
+    button.href = 'order.html'; 
+    button.textContent = 'Купить';
     item.appendChild(button);
-  
+
     return item;
   }
   
