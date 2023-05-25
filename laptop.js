@@ -65,13 +65,13 @@ const laptops = [
     }
   ];
 
-  var originalLaptops = laptops.slice();
+  let originalLaptops = laptops.slice();
 
 function filterLaptopsByBrand(brands) {
-  var laptopContainer = document.getElementById('laptopContainer');
+  let laptopContainer = document.getElementById('laptopContainer');
   laptopContainer.innerHTML = '';
 
-  var filteredLaptops;
+  let filteredLaptops;
   if (brands.length === 0) {
     filteredLaptops = originalLaptops.slice();
   } else {
@@ -80,44 +80,44 @@ function filterLaptopsByBrand(brands) {
     });
   }
 
-  for (var i = 0; i < filteredLaptops.length; i++) {
-    var laptopItem = createLaptopItem(filteredLaptops[i]);
+  for (let i = 0; i < filteredLaptops.length; i++) {
+    let laptopItem = createLaptopItem(filteredLaptops[i]);
     laptopContainer.appendChild(laptopItem);
   }
 }
 
 function createLaptopItem(laptop) {
-    var item = document.createElement('div');
+    let item = document.createElement('div');
     item.classList.add('product__item');
   
-    var photo = document.createElement('img');
+    let photo = document.createElement('img');
     photo.classList.add('product__photo');
     photo.src = laptop.img;
     photo.alt = 'Laptop';
     item.appendChild(photo);
   
-    var hoverPhoto = document.createElement('img');
+    let hoverPhoto = document.createElement('img');
     hoverPhoto.classList.add('photo__hover');
     hoverPhoto.src = laptop.hoverImg;
     hoverPhoto.alt = 'Laptop';
     item.appendChild(hoverPhoto);
   
-    var title = document.createElement('div');
+    let title = document.createElement('div');
     title.classList.add('product__title');
     title.textContent = laptop.title;
     item.appendChild(title);
   
-    var price = document.createElement('div');
+    let price = document.createElement('div');
     price.classList.add('product__price');
     price.textContent = laptop.price;
     item.appendChild(price);
   
-    var subtitle = document.createElement('div');
+    let subtitle = document.createElement('div');
     subtitle.classList.add('product__subtitle');
     subtitle.textContent = laptop.subtitle;
     item.appendChild(subtitle);
   
-    var button = document.createElement('a');
+    let button = document.createElement('a');
     button.classList.add('product__btn');
     button.href = 'order.html'; 
     button.textContent = 'Купить';
@@ -128,10 +128,10 @@ function createLaptopItem(laptop) {
   
 
 function handleCheckboxChange() {
-  var checkboxes = document.getElementsByName('brandCheckbox');
-  var selectedBrands = [];
+  let checkboxes = document.getElementsByName('brandCheckbox');
+  let selectedBrands = [];
 
-  for (var i = 0; i < checkboxes.length; i++) {
+  for (let i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
       selectedBrands.push(checkboxes[i].value);
     }
@@ -142,14 +142,4 @@ function handleCheckboxChange() {
   } else {
     filterLaptopsByBrand(selectedBrands);
   }
-}
-
-function handleResetFilter() {
-  var checkboxes = document.getElementsByName('brandCheckbox');
-
-  for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].checked = false;
-  }
-
-  filterLaptopsByBrand([]);
 }
