@@ -285,3 +285,50 @@ hr{
     margin-bottom: 30px;
     text-decoration: none;
   }
+
+    @media (max-width: 1300px) {
+
+        .header__inner {
+            justify-content: center;
+        }
+
+        .header::after {
+            width: 45%;
+        }
+
+        .device {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: 104px;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 991px) {
+
+        .header::after {
+            width: 52%;
+        }
+
+        .device {
+            margin-left: 223px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .header__logo {
+            z-index: 1;
+        }
+
+        .header::after {
+            width: 68%;
+        }
+
+        .footer__title {
+            font-size: 20px;
+        }
+
+        .footer__info {
+            font-size: 14px;
+        }
+    }
