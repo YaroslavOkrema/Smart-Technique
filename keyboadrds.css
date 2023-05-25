@@ -100,6 +100,60 @@ hr{
     color: #303030;
 }
 
+.nav-toggle{
+    width: 30px;
+    padding: 15px 0;
+    display: none;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    z-index: 1;
+  }
+  .nav-toggle__item{
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: #000000;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0%;
+  }
+  .nav-toggle.active .nav-toggle__item{
+    transform: rotate(90deg);
+    transition: all .2s linear;
+  }
+  .nav-toggle__item:before,
+  .nav-toggle__item:after{
+    content: "";
+    width: 100%;
+    height: 2px;
+
+    background-color: #000000;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+  }
+  .nav-toggle__item:before{
+    top: -8px;
+  }
+  .nav-toggle__item:after{
+    bottom: -8px;
+  }
+
 /*TITLE*/
 
 .title__content {
@@ -162,16 +216,19 @@ hr{
     font-size: 10px;
     color: rgb(53, 136, 53);
     margin-left: 15px;
+    margin-bottom: 30px;
 }
 
 .product__btn {
-    width: 100px;
-    height: 40px;
     border-radius: 50px;
     margin-top: 30px;
     margin-left: 80px;
     cursor: pointer;
     transition: .3s;
+    padding: 12px 20px;
+    background-color: #acaaaa;
+    color: #fff;
+    text-decoration: none;
 }
 
 .product__btn:hover {
@@ -239,6 +296,41 @@ hr{
 
 .choise label {
     margin-right: 15px;
+}
+
+@media (max-width: 1300px) {
+
+    .header__inner {
+        justify-content: center;
+    }
+
+    .header::after {
+        width: 45%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header::after {
+        width: 52%;
+    }
+}
+
+@media (max-width: 767px) {
+    .header__logo {
+        z-index: 1;
+    }
+
+    .header::after {
+        width: 68%;
+    }
+
+    .footer__title {
+        font-size: 20px;
+    }
+
+    .footer__info {
+        font-size: 14px;
+    }
 }
 
 
