@@ -65,13 +65,13 @@ const keyboards = [
     }
   ];
 
-  var originalKeyboards = keyboards.slice();
+let originalKeyboards = keyboards.slice();
 
 function filterKeyboardsByBrand(brands) {
-  var keyboardContainer = document.getElementById('keyboardContainer');
+  let keyboardContainer = document.getElementById('keyboardContainer');
   keyboardContainer.innerHTML = '';
 
-  var filteredKeyboards;
+  let filteredKeyboards;
   if (brands.length === 0) {
     filteredKeyboards = originalKeyboards.slice();
   } else {
@@ -80,58 +80,57 @@ function filterKeyboardsByBrand(brands) {
     });
   }
 
-  for (var i = 0; i < filteredKeyboards.length; i++) {
+  for (let i = 0; i < filteredKeyboards.length; i++) {
     var keyboardItem = createKeyboardItem(filteredKeyboards[i]);
     keyboardContainer.appendChild(keyboardItem);
   }
 }
 
 function createKeyboardItem(keyboard) {
-  var item = document.createElement('div');
+  let item = document.createElement('div');
   item.classList.add('product__item');
 
-  var photo = document.createElement('img');
+  let photo = document.createElement('img');
   photo.classList.add('product__photo');
   photo.src = keyboard.photo;
   photo.alt = 'Keyboards';
   item.appendChild(photo);
 
-  var hoverPhoto = document.createElement('img');
+  let hoverPhoto = document.createElement('img');
   hoverPhoto.classList.add('photo__hover');
   hoverPhoto.src = keyboard.hoverPhoto;
   hoverPhoto.alt = 'Keyboards';
   item.appendChild(hoverPhoto);
 
-  var title = document.createElement('div');
+  let title = document.createElement('div');
   title.classList.add('product__title');
   title.textContent = keyboard.title;
   item.appendChild(title);
 
-  var price = document.createElement('div');
+  let price = document.createElement('div');
   price.classList.add('product__price');
   price.textContent = keyboard.price;
   item.appendChild(price);
 
-  var subtitle = document.createElement('div');
+  let subtitle = document.createElement('div');
   subtitle.classList.add('product__subtitle');
   subtitle.textContent = keyboard.subtitle;
   item.appendChild(subtitle);
 
-  var button = document.createElement('a');
+  let button = document.createElement('a');
   button.classList.add('product__btn');
   button.href = 'order.html'; 
   button.textContent = 'Купить';
   item.appendChild(button);
 
-
   return item;
 }
 
 function handleCheckboxChange() {
-  var checkboxes = document.getElementsByName('brandCheckbox');
-  var selectedBrands = [];
+  let checkboxes = document.getElementsByName('brandCheckbox');
+  let selectedBrands = [];
 
-  for (var i = 0; i < checkboxes.length; i++) {
+  for (let i = 0; i < checkboxes.length; i++) {
     if (checkboxes[i].checked) {
       selectedBrands.push(checkboxes[i].value);
     }
@@ -144,28 +143,3 @@ function handleCheckboxChange() {
   }
 }
 
-function handleResetFilter() {
-  var checkboxes = document.getElementsByName('brandCheckbox');
-
-  for (var i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].checked = false;
-  }
-
-  filterKeyboardsByBrand('');
-}
-
-/*NAV TOGGLE*/
-const burger = document.getElementById("burger")
-const menu = document.getElementById("menu")
-burger.onclick = function(event){
-    
-    if(burger.classList.contains('active')){
-        burger.classList.remove('active');
-        menu.style.display = 'none';
-    }
-    else{
-        burger.classList.add('active');
-        menu.style.display = 'block';
-    }
-}
-  
