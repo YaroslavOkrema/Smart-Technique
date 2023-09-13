@@ -2,65 +2,73 @@ const keyboards = [
     {
       photo: "images/keyboards/1.jpg",
       hoverPhoto: "images/keyboards/1.1.jpg",
-      title: "Клавиатура проводная Hator Starfall Outemu Red",
+      title: "Клавіатура дротова Hator Starfall Outemu Red",
+      features: "Тип клавіатуры: Механічна Підключення: Дротове USB 3.2 Форма: Повнорозмірна",
       price: "1 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Hator"
     },
     {
       photo: "images/keyboards/2.jpg",
       hoverPhoto: "images/keyboards/2.2.jpg",
-      title: "Клавиатура проводная HATOR Rockfall EVO TKL",
+      title: "Клавіатура дротова HATOR Rockfall EVO TKL",
+      features: "Тип клавіатуры: Мембрана Підключення: Дротове USB 3.2 Форма: Ергономічна",
       price: "2 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Hator"
     },
     {
       photo: "images/keyboards/3.jpg",
       hoverPhoto: "images/keyboards/3.3.jpg",
-      title: "Клавиатура проводная A4Tech Bloody S98 Naraka",
+      title: "Клавіатура дротова A4Tech Bloody S98 Naraka",
+      features: "Тип клавіатуры: Механічна Підключення: Дротове USB 3.2 Форма: Повнорозмірна",
       price: "3 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "A4Tech"
     },
     {
       photo: "images/keyboards/4.jpg",
       hoverPhoto: "images/keyboards/4.4.jpg",
-      title: "Клавиатура проводная Logitech G512 Carbon",
+      title: "Клавіатура дротова Logitech G512 Carbon",
+      features: "Тип клавіатуры: Мембрана Підключення: Дротове USB 3.2 Форма: Ергономічна",
       price: "4 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Logitech"
     },
     {
       photo: "images/keyboards/5.jpg",
       hoverPhoto: "images/keyboards/5.5.jpg",
-      title: "Клавиатура беспроводная Hator Skyfall TKL PRO",
+      title: "Клавіатура дротова Hator Skyfall TKL PRO",
+      features: "Тип клавіатуры: Механічна Підключення: Дротове USB 3.2 Форма: Повнорозмірна",
       price: "4 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Hator"
     },
     {
       photo: "images/keyboards/6.jpg",
       hoverPhoto: "images/keyboards/6.6.jpg",
-      title: "Клавиатура проводная HyperX Alloy Origins Core",
+      title: "Клавіатура дротова HyperX Alloy Origins Core",
+      features: "Тип клавіатуры: Мембрана Підключення: Дротове USB 3.2 Форма: Ергономічна",
       price: "3 500₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "HyperX"
     },
     {
       photo: "images/keyboards/7.jpg",
       hoverPhoto: "images/keyboards/7.7.jpg",
-      title: "Клавиатура проводная Hator Skyfall TKL PRO",
+      title: "Клавіатура дротова Hator Skyfall TKL PRO",
+      features: "Тип клавіатуры: Механічна Підключення: Дротове USB 3.2 Форма: Повнорозмірна",
       price: "3 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Hator"
     },
     {
       photo: "images/keyboards/8.jpg",
       hoverPhoto: "images/keyboards/8.8.jpg",
-      title: "Клавиатура проводная HyperX Alloy Origins 60 HX",
+      title: "Клавіатура дротова HyperX Alloy Origins 60 HX",
+      features: "Тип клавіатуры: Мембрана Підключення: Дротове USB 3.2 Форма: Ергономічна",
       price: "4 299₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "HyperX"
     }
   ];
@@ -107,6 +115,11 @@ function createKeyboardItem(keyboard) {
   title.textContent = keyboard.title;
   item.appendChild(title);
 
+  let features = document.createElement('div');
+  features.classList.add('product__features');
+  features.textContent = keyboard.features;
+  item.appendChild(features);
+
   let price = document.createElement('div');
   price.classList.add('product__price');
   price.textContent = keyboard.price;
@@ -120,7 +133,7 @@ function createKeyboardItem(keyboard) {
   let button = document.createElement('a');
   button.classList.add('product__btn');
   button.href = 'order.html'; 
-  button.textContent = 'Купить';
+  button.textContent = 'Замовити';
   item.appendChild(button);
 
   return item;

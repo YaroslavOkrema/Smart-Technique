@@ -3,64 +3,72 @@ const laptops = [
       img: "images/laptops/1.jpg",
       hoverImg: "images/laptops/1.1.jpg",
       title: "Ноутбук Apple MacBook Air 13\" M1 256GB 2020",
+      features: "Процесор: Восьмиядерний Apple M1 Відеокарта:  Apple Інтегрована Оперативна пам'ять: 16 ГБ",
       price: "39 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Apple"
     },
     {
       img: "images/laptops/2.jpg",
       hoverImg: "images/laptops/2.2.jpg",
       title: "Ноутбук ASUS TUF Gaming A15 Graphite Black",
+      features: "Процесор: AMD 6-core Ryzen 5 3600 Відеокарта: GeForce GTX 1650 Оперативна пам'ять: 16 ГБ",
       price: "35 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "ASUS"
     },
     {
       img: "images/laptops/3.jpg",
       hoverImg: "images/laptops/3.3.jpg",
       title: "Ноутбук Acer Nitro 5 Shale Black",
+      features: "Процесор: AMD 8-core Ryzen 7 3600  Відеокарта: GeForce GTX 1650 Оперативна пам'ять: 16 ГБ",
       price: "45 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Acer"
     },
     {
       img: "images/laptops/4.jpg",
       hoverImg: "images/laptops/4,4.jpg",
       title: "Ноутбук Apple MacBook Air 13.6\" M2 256GB 2022",
+      features: "Процесор: Восьмиядерний Apple M2 Відеокарта:  Apple Інтегрована Оперативна пам'ять: 32 ГБ",
       price: "57 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Apple"
     },
     {
       img: "images/laptops/5.jpg",
       hoverImg: "images/laptops/5.5.jpg",
       title: "Ноутбук Acer Predator Helios 300 PH317-55-55X1",
+      features: "Процесор: AMD 8-core Ryzen 7 5600  Відеокарта:  Palit GeForce RTX 2080 Оперативна пам'ять: 32 ГБ",
       price: "67 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Acer"
     },
     {
       img: "images/laptops/6.jpg",
       hoverImg: "images/laptops/6.6.jpg",
       title: "Ноутбук ASUS ROG Zephyrus Duo GX650PZ",
+      features: "Процесор: AMD 10-core Ryzen 9 5600 Відеокарта:  Palit GeForce RTX 3050 Оперативна пам'ять: 64 ГБ",
       price: "178 500₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "ASUS"
     },
     {
       img: "images/laptops/7.jpg",
       hoverImg: "images/laptops/7.7.jpg",
       title: "Ноутбук Apple MacBook Pro 16\" Pro 512GB 2023",
+      features: "Процесор: Восьмиядерний Apple M5 Відеокарта:  Apple Інтегрована Оперативна пам'ять: 64 ГБ",
       price: "124 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Apple"
     },
     {
       img: "images/laptops/8.jpg",
       hoverImg: "images/laptops/8.8.jpg",
       title: "Ноутбук MSI Raider GE78 HX 13V",
+      features: "Процесор: AMD 10-core Ryzen 9 5600 Відеокарта:  Palit GeForce RTX 3050 Оперативна пам'ять: 64 ГБ",
       price: "198 299₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "MSI"
     }
   ];
@@ -106,6 +114,11 @@ function createLaptopItem(laptop) {
     title.classList.add('product__title');
     title.textContent = laptop.title;
     item.appendChild(title);
+
+    let features = document.createElement('div');
+    features.classList.add('product__features');
+    features.textContent = laptop.features;
+    item.appendChild(features);
   
     let price = document.createElement('div');
     price.classList.add('product__price');
@@ -120,7 +133,7 @@ function createLaptopItem(laptop) {
     let button = document.createElement('a');
     button.classList.add('product__btn');
     button.href = 'order.html'; 
-    button.textContent = 'Купить';
+    button.textContent = 'Замовити';
     item.appendChild(button);
   
     return item;

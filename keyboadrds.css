@@ -120,7 +120,7 @@ hr{
 
 /*Product*/
 .product {
-    padding: 50px 0;
+    padding: 100px 0;
 }
 
 .product__inner {
@@ -131,7 +131,7 @@ hr{
 
 .product__item {
     width: 270px;
-    height: 500px;
+    height: 600px;
     border: 1px solid grey;
     transition: transform 0.3s ease;
     background-color: #fff;
@@ -152,6 +152,13 @@ hr{
     width: 70%;
     margin-left: 15px;
     margin-bottom: 20px;
+}
+
+.product__features {
+    font-size: 14px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    color: blue;
 }
 
 .product__price {
@@ -239,6 +246,9 @@ hr{
     padding: 30px 0;
     display: flex;
     justify-content: center;
+    position: absolute;
+    top: 26%;
+    left: 22%;
 }
 
 .choise label {

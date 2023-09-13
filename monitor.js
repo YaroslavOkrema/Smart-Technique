@@ -2,65 +2,73 @@ const monitors = [
     {
       photo: "images/monitors/1.jpg",
       hoverPhoto: "images/monitors/1.1.jpg",
-      title: "Монитор 24.5\" BenQ Zowie XL2546K",
+      title: "Монітор 24.5\" BenQ Zowie XL2546K",
+      features: "Час реакції матриці: 1 мс (TN) Яскравість дисплея: 320 кд/м² Діагональ дисплея: 24.5",
       price: "21 500₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "BenQ"
     },
     {
       photo: "images/monitors/2.jpg",
       hoverPhoto: "images/monitors/2.2.jpg",
-      title: "Монитор BenQ 24\" XL2411P Grey 144Hz",
+      title: "Монітор BenQ 24\" XL2411P Grey 144Hz",
+      features: "Час реакції матриці: 2 мс (TN) Яскравість дисплея: 300 кд/м² Діагональ дисплея: 24",
       price: "9 200₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "BenQ"
     },
     {
       photo: "images/monitors/3.jpg",
       hoverPhoto: "images/monitors/3.3.jpg",
-      title: "Монитор 23.8\" AOC 24G2SAE/BK - 165 Hz",
+      title: "Монітор 23.8\" AOC 24G2SAE/BK - 165 Hz",
+      features: "Час реакції матриці: 1 мс (IPS) Яскравість дисплея: 320 кд/м² Діагональ дисплея: 24.5",
       price: "6 200₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "AOC"
     },
     {
       photo: "images/monitors/4.jpg",
       hoverPhoto: "images/monitors/4.4.jpg",
-      title: "Монитор 23.8\" Asus VG249Q - Adaptive-Sync",
+      title: "Монітор 23.8\" Asus VG249Q - Adaptive-Sync",
+      features: "Час реакції матриці: 3 мс (TN) Яскравість дисплея: 290 кд/м² Діагональ дисплея: 22",
       price: "7 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Asus"
     },
     {
       photo: "images/monitors/5.jpg",
       hoverPhoto: "images/monitors/5.5.jpg",
-      title: "Монитор 34\" QUBE Overlord C34UQ144",
+      title: "Монітор 34\" QUBE Overlord C34UQ144",
+      features: "Час реакції матриці: 1 мс (IPS) Яскравість дисплея: 320 кд/м² Діагональ дисплея: 30",
       price: "14 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "QUBE"
     },
     {
       photo: "images/monitors/6.jpg",
       hoverPhoto: "images/monitors/6.6.jpg",
-      title: "Монитор 26.9\" Samsung Odyssey G7 C27G75TQSI",
+      title: "Монітор 26.9\" Samsung Odyssey G7 C27G75TQSI",
+      features: "Час реакції матриці: 1 мс (TN) Яскравість дисплея: 320 кд/м² Діагональ дисплея: 24.5",
       price: "19 500₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Samsung"
     },
     {
       photo: "images/monitors/7.jpg",
       hoverPhoto: "images/monitors/7.7.jpg",
-      title: "Монитор 23.8\" Gigabyte G24F 2 Gaming Monitor",
+      title: "Монітор 23.8\" Gigabyte G24F 2 Gaming Monitor",
+      features: "Час реакції матриці: 2 мс (TN) Яскравість дисплея: 320 кд/м² Діагональ дисплея: 22",
       price: "8 999₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "Gigabyte"
     },
     {
       photo: "images/monitors/8.jpg",
       hoverPhoto: "images/monitors/8.8.jpg",
-      title: "Монитор 23.8\" AOC 24G2SPU/BK",
+      title: "Монітор 23.8\" AOC 24G2SPU/BK",
+      features: "Час реакції матриці: 1 мс (IPS) Яскравість дисплея: 320 кд/м² Діагональ дисплея: 24",
       price: "7 299₴",
-      subtitle: "Есть в наличии",
+      subtitle: "В наявності",
       brand: "AOC"
     }
   ];
@@ -107,6 +115,11 @@ function createMonitorItem(monitor) {
   title.textContent = monitor.title;
   item.appendChild(title);
 
+  let features = document.createElement('div');
+  features.classList.add('product__features');
+  features.textContent = monitor.features;
+  item.appendChild(features);
+
   let price = document.createElement('div');
   price.classList.add('product__price');
   price.textContent = monitor.price;
@@ -120,7 +133,7 @@ function createMonitorItem(monitor) {
   let button = document.createElement('a');
   button.classList.add('product__btn');
   button.href = 'order.html'; 
-  button.textContent = 'Купить';
+  button.textContent = 'Замовити';
   item.appendChild(button);
 
   return item;
