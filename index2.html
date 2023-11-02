@@ -22,9 +22,6 @@
                 <a class="nav__link" href="pc.html">Комп'ютери</a>
                 <a class="nav__link" href="laptop.html">Ноутбуки</a>
                 <a class="nav__link" href="about.html">Про нас</a>
-                <a class="nav__link" href="reg.html">Реєстрація</a>
-                <div style="margin-left: 50px;">|</div>
-                <a class="nav__link" href="enter.html">Вхід</a>
             </nav>
         </div>
     </div>
@@ -143,6 +140,10 @@
                     alert("Ваш номер успішно надіслано! Ми зв'яжемося з вами протягом 5 хвилин.");
                   }
                 });
+
+                let user = JSON.parse(localStorage.getItem("case"));
+                document.getElementById("namesurname").innerText = user.name + '' + user.surname;
+                console.log(user);
             </script>        
         </div>
     </div>

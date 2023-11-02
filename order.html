@@ -22,6 +22,9 @@
                     <a class="nav__link" href="pc.html">Комп'ютери</a>
                     <a class="nav__link" href="laptop.html">Ноутбуки</a>
                     <a class="nav__link" href="about.html">Про нас</a>
+                    <a class="nav__link" href="reg.html">Реєстрація</a>
+                    <div style="margin-left: 50px;">|</div>
+                    <a class="nav__link" href="enter.html">Вхід</a>
                 </nav>
             </div>
         </div>
@@ -82,6 +85,10 @@
                 function showAlert() {
                     alert("Ваше замовлення успішно оформлено. Наш оператор скоро з вами зв'яжеться!");
                 }
+
+                let user = JSON.parse(localStorage.getItem("case"));
+                document.getElementById("namesurname").innerText = user.name + '' + user.surname;
+                console.log(user);
             </script>            
         </div>
      </section>

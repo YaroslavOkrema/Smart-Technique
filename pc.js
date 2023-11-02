@@ -155,5 +155,7 @@ const computers = [
       filterComputersByBrand(selectedBrands)
     }
   }
+
+  
   
   
